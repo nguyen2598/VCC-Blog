@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+.container_admin {
+    display: flex;
+    flex: 1;
+}
+
+aside.side_bar {
+    position: relative;
+    width: 250px;
+    background-color: #2C3E50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+aside.side_bar .icon_tonge{
+    display: none;
+}
+
+aside.side_bar .logo {
+    display: block;
+    margin: 20px 0;
+}
+
+aside.side_bar nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+aside.side_bar nav ul li {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+aside.side_bar nav ul li:hover {
+    background-color: #34495E;
+}
+
+aside.side_bar nav ul li i {
+    margin-right: 10px;
+}
+
+main {
+    flex: 1;
+    background-color: #ECF0F1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header .search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+}
+
+header .user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-list {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.post-header .create-btn {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center; /* Center text in table cells */
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; /* Center vertically */
+}
+
+table th {
+    background-color: #34495E;
+    color: white;
+}
+
+.status .suss {
+    color: #00FF00; /* Green success color for text */
+     background-color: #CCFFCC; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+.status .err {
+    color: #FF0000	; /* Green success color for text */
+     background-color: #ffbfbf	; 
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.actions {
+    position: relative;
+}
+
+.actions .dropdown {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    z-index: 10;
+}
+
+.actions .icon-show:hover ~ .dropdown {
+    display: block;
+}
+.actions .icon-show{
+    padding: 4px 12px;
+}
+
+.actions .dropdown:hover {
+    display: block;
+}
+
+.actions .dropdown a {
+    display: block;
+    padding: 10px 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.actions .dropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+.actions .dropdown a.delete {
+    color: red;
+}
+
+@media only screen and (max-width: 800px) {
+    aside.side_bar {
+        width: 20px;
+        transition: width 0.3s;
+        /* overflow: hidden; */
+    }
+    aside.side_bar .icon_tonge{
+        display: block;
+        position: absolute;
+        right: 0;
+        transform: translateX(50%);
+        background-color: #3498DB;
+        padding: 8px;
+        border-radius: 100%;
+    }
+    aside.side_bar .icon_tonge .fa-chevron-right{
+        display: block;
+    }
+    aside.side_bar .icon_tonge .fa-chevron-left{
+        display: none;
+    }
+    aside.side_bar .icon_tonge.show .fa-chevron-right{
+        display: none;
+    }
+    aside.side_bar .icon_tonge.show .fa-chevron-left{
+        display: block;
+    }
+    aside.side_bar .logo {
+        display: none;
+    }
+    
+    aside.side_bar nav {
+        display: none;
+    }
+    
+    
+    aside.side_bar.expanded {
+        width: 250px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1000;
+    }
+
+    aside.side_bar .logo {
+        display: none;
+    }
+    
+    aside.side_bar nav ul li i {
+        display: block;
+    }
+
+    aside.side_bar nav ul li {
+        justify-content: center;
+    }
+
+    aside.side_bar.expanded .logo {
+        display: block;
+    }
+    aside.side_bar.expanded nav {
+        display: block;
+    }
+
+    aside.side_bar.expanded nav ul li {
+        justify-content: flex-start;
+    }
+
+    aside.side_bar.expanded nav ul li i {
+        margin-right: 10px;
+    }
+}

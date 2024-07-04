@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Post List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.2.0/css/all.min.css"
+      integrity="sha512-6c4nX2tn5KbzeBJo9Ywpa0Gkt+mzCzJBrE1RB6fmpcsoN+b/w/euwIMuQKNyUoU/nToKN3a8SgNOtPrbW12fug=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./admin-page.css" />
+  </head>
+  <body>
+    <div class="container_admin">
+      <aside class="side_bar">
+        <div class="icon_tonge">
+          <i class="fas fa-chevron-right icon_toong"></i>
+          <i class="fas fa-chevron-left icon_toong" ></i>
+        </div>
+        <div class="logo">
+          <img src="logo.png" alt="VC Corp" />
+        </div>
+        <nav>
+          <ul>
+            <li><i class="fas fa-tachometer-alt"></i> Dashboards</li>
+            <li><i class="fas fa-file-alt"></i> Post</li>
+            <li><i class="fas fa-user"></i> Account</li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <header>
+          <div class="search-bar">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <div class="user-profile">
+            <img src="user.jpg" alt="User" />
+          </div>
+        </header>
+        <section class="post-list">
+          <div class="post-header">
+            <h2>POST LIST</h2>
+            <button class="create-btn">Create New</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th><input type="checkbox"  id="selectAll"/></th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Locale</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Repeat this block for each post -->
+              <tr>
+                <td><input type="checkbox" class="selectItem"/></td>
+                <td>s</td>
+                <td>sss <a href="#">Read More</a></td>
+                <td>Jun 27, 2024</td>
+                <td>Thời sự</td>
+                <td>Việt Nam</td>
+                <td class="status"><span class="suss">DISPLAY</span></td>
+
+                <td class="actions">
+                   <i class="fas fa-ellipsis-v icon-show"></i>
+                  <div class="dropdown">
+                    <a href="#">Update</a>
+                    <a href="#">Details</a>
+                    <a href="#" class="delete">Delete</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="selectItem"/></td>
+                <td>s</td>
+                <td>sss <a href="#">Read More</a></td>
+                <td>Jun 27, 2024</td>
+                <td>Thời sự</td>
+                <td>Việt Nam</td>
+                <td class="status"><span class="err">DISPLAY</span></td>
+                <td class="actions">
+                   <i class="fas fa-ellipsis-v icon-show"></i>
+                  <div class="dropdown">
+                    <a href="#">Update</a>
+                    <a href="#">Details</a>
+                    <a href="#" class="delete">Delete</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="selectItem"/></td>
+                <td>s</td>
+                <td>sss <a href="#">Read More</a></td>
+                <td>Jun 27, 2024</td>
+                <td>Thời sự</td>
+                <td>Việt Nam</td>
+                <td class="status"><span class="suss">DISPLAY</span></td>
+
+                <td class="actions">
+                   <i class="fas fa-ellipsis-v icon-show"></i>
+                  <div class="dropdown">
+                    <a href="#">Update</a>
+                    <a href="#">Details</a>
+                    <a href="#" class="delete">Delete</a>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="selectItem"/></td>
+                <td>s</td>
+                <td>sss <a href="#">Read More</a></td>
+                <td>Jun 27, 2024</td>
+                <td>Thời sự</td>
+                <td>Việt Nam</td>
+                <td class="status"><span class="suss">DISPLAY</span></td>
+
+                <td class="actions">
+                  <i class="fas fa-ellipsis-v icon-show"></i>
+                  <div class="dropdown">
+                    <a href="#">Update</a>
+                    <a href="#">Details</a>
+                    <a href="#" class="delete">Delete</a>
+                  </div>
+                </td>
+              </tr>
+              <!-- End repeat -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <script src="./admin.js"></script>
+  </body>
+</html>
