@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="./Login.css">
+
+</head>
+<body>
+    <div class="auth">
+        <div class="bg_image_left">
+            <img src="../assest/bg_left.png" alt="" />
+        </div>
+        <div class="bg_image_right">
+            <img src="../assest/bg_right.png"  alt="" />
+        </div>
+        <div class="auth_content">
+            <form onSubmit={handleSubmit(onSubmit)} class="form_login">
+                <div class="login_image">
+                    <img src="../assest/Login.png" alt="" />
+                </div>
+                <div class="login_group">
+                    <div class="login_input">
+                        <input
+                            id="email"
+                            type="text"
+                            placeholder="Email hoặc số điện thoại"
+                           
+                        />
+                      
+                    </div>
+                    <p class="login_mess"></p>
+                </div>
+                <div class="login_group">
+                    <div class="login_input">
+                        <input
+                            placeholder="Mật khẩu"
+                            id="password"
+                            type= 'password'
+                           
+                        />
+                       
+                    </div>
+                    <p class="login_mess"></p>
+                </div>
+                <div class="save_acc">
+                    <input type="checkbox" name="" id="">
+                    Lưu tài thông tin
+                </div>
+                <p class="redirect">
+                    Chưa có tài khoản? <a href="register.html">Đăng ký</a>
+                </p>
+                <div class="login_by_social">
+                    <div class="login_by_social_icon login_by_fb">
+                        <img src="../assest/fb.png" alt="">
+                    </div>
+                    <div class="login_by_social_icon login_by_google">
+                        <img src="../assest/google.png" alt="">
+                    </div>
+                </div>
+                <button class="login_submit" type="submit">
+                    Đăng Nhập
+                </button>
+                <a href="identify.html">
+
+                    Quên mật khẩu
+                </a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
