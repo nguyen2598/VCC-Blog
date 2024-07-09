@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      User.belongsTo(models.Role, {
+        foreignKey: 'role_id',
+        as: 'role'
+      });
     }
   }
   User.init({
@@ -18,9 +22,14 @@ module.exports = (sequelize, DataTypes) => {
     username: DataTypes.STRING,
     password: DataTypes.STRING,
     email: DataTypes.STRING,
+    ext: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'User',
+    paranoid: true,
+
+    // If you want to give a custom name to the deletedAt column( đổi tên cột từ deleteAt thành destroyTime)
+    deletedAt: 'destroyTime',
   });
   return User;
 };
