@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 /*
 Lumino Admin Bootstrap Template
 Version 1.0
@@ -990,3 +989,200 @@ a.todo-list-item:focus {
     height: 65px;
     overflow: scroll;
 }
+
+.w-100 {
+    width: 100%;
+}
+.table {
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #dddddd;
+    border-collapse: collapse !important;
+    border-radius: 1px;
+}
+
+.fixed-table-toolbar.bars {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 34px;
+}
+
+.w-100 {
+    width: 100%;
+}
+.table {
+    margin-bottom: 0 !important;
+    border-bottom: 1px solid #dddddd;
+    border-collapse: collapse !important;
+    border-radius: 1px;
+}
+
+.fixed-table-toolbar.bars {
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 34px;
+}
+
+.c-sky {
+    color: #30a5ff;
+    font-size: 20px;
+}
+.d-flex {
+    display: flex !important;
+}
+.align-items-center {
+    align-items: center !important;
+}
+.align-items-start {
+    align-items: flex-start !important;
+}
+.align-items-end {
+    align-items: flex-end !important;
+}
+
+// Modal delete
+.modal-confirm {
+    color: #636363;
+    width: 400px;
+    margin: auto;
+}
+.modal-confirm .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    font-size: 14px;
+}
+.modal-confirm .modal-header {
+    border-bottom: none;
+    position: relative;
+}
+.modal-confirm h4 {
+    text-align: center;
+    font-size: 26px;
+    margin: 30px 0 -10px;
+}
+.modal-confirm .close {
+    position: absolute;
+    top: -5px;
+    right: -2px;
+}
+.modal-confirm .modal-body {
+    color: #999;
+}
+.modal-confirm .modal-footer {
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px 15px 25px;
+}
+.modal-confirm .modal-footer a {
+    color: #999;
+}
+.modal-confirm .icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border-radius: 50%;
+    z-index: 9;
+    text-align: center;
+    border: 3px solid #f15e5e;
+}
+.modal-confirm .icon-box i {
+    color: #f15e5e;
+    font-size: 46px;
+    display: inline-block;
+    margin-top: 13px;
+}
+.modal-confirm .btn {
+    color: #fff;
+    border-radius: 4px;
+    background: #60c7c1;
+    text-decoration: none;
+    transition: all 0.4s;
+    line-height: normal;
+    min-width: 120px;
+    border: none;
+    min-height: 40px;
+    border-radius: 3px;
+    margin: 0 5px;
+    outline: none !important;
+}
+.modal-confirm .btn-info {
+    background: #c1c1c1;
+}
+.modal-confirm .btn-info:hover,
+.modal-confirm .btn-info:focus {
+    background: #a8a8a8;
+}
+.modal-confirm .btn-danger {
+    background: #f15e5e;
+}
+.modal-confirm .btn-danger:hover,
+.modal-confirm .btn-danger:focus {
+    background: #ee3535;
+}
+.trigger-btn {
+    display: inline-block;
+    margin: 100px auto;
+}
+
+//
+// Table
+.table-responsive {
+    // -webkit-overflow-scrolling: touch; /* Cho phép cuộn mượt trên thiết bị cảm ứng */
+    min-width: 1000px;
+}
+
+.panel-table {
+    overflow-x: auto;
+    width: 100%;
+}
+.row {
+    margin-right: 0;
+    margin-left: -15px;
+}
+
+table .dropdown-menu {
+    z-index: 1050;
+    position: absolute;
+    top: -60px;
+    left: -120px;
+    transform: translate3d(0, 0, 0);
+
+    // will-change: transform;
+}
+.gap-8 {
+    gap: 8px;
+}
+.fz-16 {
+    font-size: 16px !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.color-30a5ff {
+    color: #30a5ff !important;
+}
+.color-red {
+    color: red !important;
+}
+.bx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.page-item {
+    cursor: pointer;
+}
+.min-w-800 {
+    min-width: 800px;
+}
+
+.pt-20px {
+    padding-top: 20px;
+}
+// >>>>>>> Stashed changes
+// *
