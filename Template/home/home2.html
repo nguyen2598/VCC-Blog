@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>News Website</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            .main-content {
+                margin-top: 20px;
+            }
+            .post-title {
+                font-size: 1.2em;
+                font-weight: bold;
+            }
+            .post-date {
+                font-size: 0.9em;
+                color: #666;
+            }
+            .category-title {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            .post-img {
+                max-height: 150px;
+                object-fit: cover;
+            }
+            .post {
+                margin-bottom: 20px;
+            }
+            .breadcrumb {
+                background: none;
+                padding-left: 0;
+            }
+            .sidebar {
+                margin-top: 20px;
+            }
+            .footer {
+                background-color: #f8f9fa;
+                padding: 20px 0;
+                margin-top: 40px;
+            }
+            .footer p {
+                margin: 0;
+            }
+            .bg-light-custom {
+                background-color: #fff;
+                box-shadow: 0px 2px 10px #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="bg-light py-3">
+            <div class="container">
+                <!-- <div class="row nav-menu-primary">
+                    <div
+                        id="menu"
+                        class="collapse col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center"
+                    >
+                        <ul class="d-flex align-items-center mb-0 justify-content-center">
+                            <div id="logo" class="col-lg-3 col-md-3 col-sm-12">
+                                <h1>
+                                    <a href="#"
+                                        ><img
+                                            class="img-fluid"
+                                            src="https://static.mediacdn.vn/VCCorp/Images/vccorp-15b8528c47c28f0b.png"
+                                    /></a>
+                                </h1>
+                            </div>
+                            <li class="menu-item .h-100per"><a href="#">Trang chủ</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Xã hội</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Thế giới</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Kinh doanh</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Thể thao</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Đời sống</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Pháp luật</a></li>
+                            <li class="menu-item .h-100per"><a href="#">Liên hệ</a></li>
+                            <div id="login" class="d-flex align-items-center .h-100per">
+                                <a href="#">đăng xuất</a>
+                            </div>
+                        </ul>
+                    </div>
+                </div> -->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#">
+                        <img
+                            class="img-fluid"
+                            src="https://static.mediacdn.vn/VCCorp/Images/vccorp-15b8528c47c28f0b.png"
+                        />
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarNav"
+                        aria-controls="navbarNav"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-autob">
+                            <!-- <li class="nav-item active">
+                                <a class="nav-link text-nowrap" href="#">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Xã hội</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Thế giới</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Kinh doanh</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Thể thao</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Đời sống</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Pháp luật</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-nowrap" href="#">Liên hệ</a>
+                            </li>
+                        </ul>
+                        <div id="login" class="d-flex align-items-center">
+                            <a href="#">đăng xuất</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <div class="container main-content">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="#">Xã hội</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Cảnh máy bay, xe khách, tàu hỏa ngừng lăn bánh những ngày giãn cách
+                    </li>
+                </ol>
+            </nav>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="category-title">Giao thông</div>
+
+                    <!-- Top article -->
+                    <div class="post d-flex row">
+                        <img
+                            src="https://cdn1312.cdn-template-4s.com/thumbs/xa_hoi/giao_thong/news_45_thumb_350.jpg"
+                            class="img-fluid post-img col-md-4 col-sm-12"
+                            alt="Top Article Image"
+                        />
+                        <div class="post-wraper col-md-8 col-sm-12">
+                            <div class="post-title">
+                                Cảnh máy bay, xe khách, tàu hỏa ngừng lăn bánh những ngày giãn cách
+                            </div>
+                            <div class="post-date">18/08/2021</div>
+                            <p>
+                                Sân bay Nội Bài, bến xe Mỹ Đình, Giáp Bát... chung cảnh vắng vẻ khi Hà Nội giãn cách xã
+                                hội để phòng chống dịch Covid-19.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Articles -->
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-12 post">
+                            <img
+                                src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                class="img-fluid post-img w-100"
+                                alt="Article Image"
+                            />
+                            <div class="post-title">
+                                Hà Nội yêu cầu tài xế 'luồng xanh' phải có giấy xét nghiệm Covid-19
+                            </div>
+                            <div class="post-date">18/08/2021</div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 post">
+                            <img
+                                src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                class="img-fluid post-img w-100"
+                                alt="Article Image"
+                            />
+                            <div class="post-title">Hơn 4.000 xe được TP.HCM cấp thẻ nhận diện phương tiện</div>
+                            <div class="post-date">18/08/2021</div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 post">
+                            <img
+                                src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                class="img-fluid post-img w-100"
+                                alt="Article Image"
+                            />
+                            <div class="post-title">Tài xế xe máy bị ôtô chạy ngược chiều tông tử vong</div>
+                            <div class="post-date">18/08/2021</div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-sm-12 post">
+                            <img
+                                src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                class="img-fluid post-img w-100"
+                                alt="Article Image"
+                            />
+                            <div class="post-title">Công trường hơn 2.500 tỷ bắc qua sông Hồng</div>
+                            <div class="post-date">18/08/2021</div>
+                        </div>
+                    </div>
+
+                    <!-- Latest articles -->
+                    <div class="category-title">Mới nhất</div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-9">
+                            <div class="post row">
+                                <img
+                                    src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                    class="img-fluid post-img col-md-4 col-sm-12"
+                                    alt="Article Image"
+                                />
+                                <div class="col-ms-12 col-md-8">
+                                    <div class="post-title">
+                                        Cảnh máy bay, xe khách, tàu hỏa ngừng lăn bánh những ngày giãn cách
+                                    </div>
+                                    <div class="post-date">18/08/2021</div>
+                                    <p>
+                                        Sân bay Nội Bài, bến xe Mỹ Đình, Giáp Bát... chung cảnh vắng vẻ khi Hà Nội giãn
+                                        cách xã hội để phòng chống dịch Covid-19.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="post row">
+                                <img
+                                    src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                    class="img-fluid post-img col-md-4 col-sm-12"
+                                    alt="Article Image"
+                                />
+                                <div class="col-ms-12 col-md-8">
+                                    <div class="post-title">
+                                        Hà Nội yêu cầu tài xế 'luồng xanh' phải có giấy xét nghiệm Covid-19
+                                    </div>
+                                    <div class="post-date">18/08/2021</div>
+                                    <p>
+                                        Sở GTVT Hà Nội yêu cầu các đơn vị vận tải không bớt lơ người chở xét nghiệm
+                                        Covid-19 tham gia vận chuyển hàng hóa được cấp thẻ nhận diện phương tiện.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <!--  sidebar -->
+                            <div class="list-group bg-light-custom">
+                                <div class="list-group-item list-group-item-action h4">Danh mục</div>
+                                <a href="#" class="list-group-item list-group-item-action">Chính trị</a>
+                                <a href="#" class="list-group-item list-group-item-action">Giáo dục</a>
+                                <a href="#" class="list-group-item list-group-item-action">Công nghệ</a>
+                            </div>
+                            <div class="mt-4">
+                                <img
+                                    src="https://cdn1312.cdn-template-4s.com/media/xa_hoi/giao_thong/news_44.jpg"
+                                    class="img-fluid"
+                                    alt="Advertisement"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more articles as needed -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p><strong>Văn phòng Hà Nội:</strong></p>
+                        <p>Tầng 4, Tòa nhà số 97 - 99 Láng Hạ, Đống Đa, Hà Nội (Tòa nhà Petrowaco)</p>
+                        <p>Hotline: 0901191616</p>
+                        <p>Email: contact@sm4s.vn</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><strong>Văn phòng Hồ Chí Minh:</strong></p>
+                        <p>270 Cao Thắng, Phường 12, Quận 10</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p><strong>Theo dõi chúng tôi tại:</strong></p>
+                        <p>
+                            <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Google+</a> |
+                            <a href="#">LinkedIn</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
