@@ -1,0 +1,31 @@
+<form [formGroup]="identifyForm" (ngSubmit)="onSubmit()" class="identify_form">
+  <h2 class="identify_h2">Tìm tài khoản của bạn</h2>
+  <div class="identify_td">
+    Vui lòng nhập email hoặc số di động để tìm kiếm tài khoản của bạn.
+  </div>
+  <div class="identify_group">
+    <div class="identify_input">
+      <input
+        id="email"
+        type="text"
+        placeholder="Email hoặc số điện thoại"
+        formControlName="email"
+      />
+      <span>
+        <!-- <IoIosMail /> -->
+      </span>
+    </div>
+    <p class="identify_mess" *ngIf="identifyForm.controls['email'].touched">
+      {{ identifyForm.controls['email'].errors?.['required'] ? 'Vui lòng không để trống' : 
+               identifyForm.controls['email'].errors?.['email'] ? 'Sai định dạng email' : '' }}
+    </p>
+    <p
+      class="identify_mess"
+      *ngIf="!identifyForm.controls['email'].touched"
+    ></p>
+  </div>
+  <div class="identify_footer">
+    <a routerLink="/auth/login">Hủy</a>
+    <button class="identify_submit" type="submit">Tìm kiếm</button>
+  </div>
+</form>

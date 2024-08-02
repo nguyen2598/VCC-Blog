@@ -1,0 +1,59 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form_registrer">
+    <div>
+        <img src="../../../../assets/register.png" alt="" />
+    </div>
+    <div class="register_group">
+        <div class="register_input">
+            <input id="name" type="text" placeholder="Họ và tên" formControlName="username" />
+            <span>
+                <!-- <FaUser /> -->
+            </span>
+        </div>
+        <p class="register_mess" *ngIf="registerForm.controls['username'].touched">
+            {{ registerForm.controls['username'].errors?.['required'] ? 'Vui lòng không để trống' : '' }}
+        </p>
+        <p class="register_mess" *ngIf="!registerForm.controls['username'].touched"></p>
+    </div>
+    <div class="register_group">
+        <div class="register_input">
+            <input id="email" type="text" placeholder="Email hoặc số điện thoại" formControlName="email" />
+            <span> </span>
+        </div>
+        <p class="register_mess" *ngIf="registerForm.controls['email'].touched">
+            {{ registerForm.controls['email'].errors?.['required'] ? 'Vui lòng không để trống' : 
+        registerForm.controls['email'].errors?.['email'] ? 'Sai định dạng email' : '' }}
+        </p>
+        <p class="register_mess" *ngIf="!registerForm.controls['email'].touched"></p>
+    </div>
+    <div class="register_group">
+        <div class="register_input">
+            <input id="password" type="password" placeholder="Mật khẩu" formControlName="password" />
+        </div>
+        <p class="register_mess" *ngIf="registerForm.controls['password'].touched">
+            {{ registerForm.controls['password'].errors?.['required'] ? 'Vui lòng không để trống' : 
+        registerForm.controls['password'].errors?.['minlength'] ? 'Mật khẩu quá ngắn' : '' }}
+        </p>
+        <p class="register_mess" *ngIf="!registerForm.controls['password'].touched"></p>
+    </div>
+    <div class="register_group">
+        <div class="register_input">
+            <input id="password" type="password" placeholder="Xác nhận mật khẩu" formControlName="confirmPassword" />
+        </div>
+        <p class="register_mess" *ngIf="registerForm.controls['confirmPassword'].touched">
+            {{ registerForm.controls['confirmPassword'].errors?.['required'] ? 'Vui lòng không để trống' : 
+             registerForm.hasError('mismatch') ? 'Mật khẩu xác nhận không khớp' : '' }}
+        </p>
+        <p class="register_mess" *ngIf="!registerForm.controls['confirmPassword'].touched"></p>
+    </div>
+    <button class="register_submit" type="submit" [disabled]="registerForm.invalid">Đăng ký</button>
+    <span class="or">----OR----</span>
+    <div class="register_by_social">
+        <div class="register_by_social_icon register_by_fb">
+            <img src="../../../../assets/fb.png" alt="" />
+        </div>
+        <div class="register_by_social_icon register_by_google">
+            <img src="../../../../assets/google.png" alt="" />
+        </div>
+    </div>
+    <p class="redirect">Đã có tài khoản? <a routerLink="/auth/login">Đăng nhập</a></p>
+</form>

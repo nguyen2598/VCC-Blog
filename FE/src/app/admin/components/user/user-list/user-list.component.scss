@@ -1,0 +1,57 @@
+.status-enable {
+    color: #28a745; /* Màu chữ xanh lá cây */
+    font-size: 16px; /* Cỡ chữ */
+    font-weight: bold; /* Độ dày chữ */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Đổ bóng chữ */
+    padding: 5px 10px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo góc */
+    background-color: #e6ffe6; /* Màu nền nhạt */
+}
+
+.status-disable {
+    color: #dc3545; /* Màu chữ đỏ */
+    font-size: 16px; /* Cỡ chữ */
+    font-weight: bold; /* Độ dày chữ */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Đổ bóng chữ */
+    padding: 5px 10px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo góc */
+    background-color: #ffe6e6; /* Màu nền nhạt */
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+.dropdown-menu {
+    border-radius: 8px;
+}
+.dropdown-menu .active {
+    background-color: #30a5ff;
+    font-size: 14px;
+    color: #ffffff;
+}
+.dropdown-menu li {
+    cursor: pointer;
+    padding: 8px 12px;
+}
+.color-green {
+    color: #28a745;
+}
+.vertical-align-center {
+    vertical-align: middle !important;
+}
+.column-status {
+    width: 100px;
+}
+
+.column-actions {
+    width: 52px;
+}
+.text-align-center {
+    text-align: center;
+}
+.dropdown {
+    display: flex;
+    justify-content: center;
+}
+.text-center {
+    text-align: center;
+}

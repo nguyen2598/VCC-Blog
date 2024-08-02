@@ -1,0 +1,51 @@
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form_login">
+    <div class="login_image">
+        <img src="../../../../assets/Login.png" alt="" />
+    </div>
+    <div class="login_group">
+        <div class="login_input">
+            <input id="email" type="text" placeholder="Email hoặc số điện thoại" formControlName="email" required />
+        </div>
+        <!-- <p class="login_mess" *ngIf="loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched">Name is required.</p>
+    <p class="login_mess" *ngIf="loginForm.controls['email'].errors?.['email'] && loginForm.controls['email'].touched">Invalid email.</p> -->
+        <p class="login_mess" *ngIf="loginForm.controls['email'].touched">
+            {{ loginForm.controls['email'].errors?.['required'] ? 'Vui lòng không để trống' : 
+           loginForm.controls['email'].errors?.['email'] ? 'Sai định dạng email' : '' }}
+        </p>
+        <p class="login_mess" *ngIf="!loginForm.controls['email'].touched"></p>
+    </div>
+    <div class="login_group">
+        <div class="login_input">
+            <input placeholder="Mật khẩu" id="password" type="password" formControlName="password" />
+        </div>
+        <!-- <p class="login_mess"  *ngIf="loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched">Vui lòng nhập mật khẩu </p>
+        <p class="login_mess"  *ngIf="loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched">Vui lòng nhập mật khẩu</p> -->
+        <p class="login_mess" *ngIf="loginForm.controls['password'].touched">
+            {{ loginForm.controls['password'].errors?.['required'] ? 'Vui lòng không để trống' : 
+               loginForm.controls['password'].errors?.['minlength'] ? 'Mật khẩu quá ngắn' : '' }}
+        </p>
+        <p class="login_mess" *ngIf="!loginForm.controls['password'].touched"></p>
+    </div>
+    <div class="save_forgot">
+        <p class="save_acc">
+            <input type="checkbox" name="" id="" #rememberMeCheckbox />
+            Lưu tài thông tin
+        </p>
+        <a class="save_forgot_a" routerLink="/auth/identify"> Quên mật khẩu? </a>
+    </div>
+
+    <!-- <button class="login_submit" type="submit" 
+    [disabled]="loginForm.invalid"
+    >Đăng Nhập</button> -->
+    <button class="login_submit" type="submit">Đăng Nhập</button>
+    <span class="or">----OR----</span>
+    <div class="login_by_social">
+        <div class="login_by_social_icon login_by_fb">
+            <img src="../../../../assets/fb.png" alt="" />
+        </div>
+        <div class="login_by_social_icon login_by_google">
+            <img src="../../../../assets/google.png" alt="" />
+        </div>
+    </div>
+    <p class="redirect">Chưa có tài khoản? <a routerLink="/auth/register">Đăng ký</a></p>
+</form>

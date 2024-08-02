@@ -1,0 +1,95 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#" class="glyph stroked home"><i class="bx bx-home c-sky"></i> </a>
+            </li>
+            <li>
+                <a routerLink="../" class="glyph stroked home">Danh mục</a>
+                <!-- trỏ đến đường dẫn trước nó  routerLink="../" -->
+            </li>
+            <li *ngIf="currentRoute === 'create-category'">thêm danh mục</li>
+            <li *ngIf="currentRoute === 'edit-category'">sửa danh mục</li>
+            <li *ngIf="currentRoute === 'edit-category'" class="active">{{ data }}</li>
+        </ol>
+    </div>
+    <!--/.row-->
+
+    <div *ngIf="currentRoute === 'edit-category'" class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                <!-- Danh mục:Danh mục 1 -->
+            </h1>
+        </div>
+    </div>
+    <!--/.row-->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="col-md-8">
+                        <div *ngIf="message" [ngClass]="message.status ? 'alert alert-success' : 'alert alert-danger'">
+                            {{ message.message }}
+                        </div>
+                        <form role="form" [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+                            <div class="form-group">
+                                <label>Tên danh mục:</label>
+                                <input
+                                    *ngIf="currentRoute === 'edit-category'"
+                                    type="text"
+                                    formControlName="name"
+                                    required
+                                    value="Danh mục 1"
+                                    class="form-control"
+                                    [ngClass]="
+                                        categoryForm.controls['name'].touched &&  categoryForm.controls['name'].errors?.['required']
+                                            ? 'error-mess form-control'
+                                            : 'form-control'
+                                    "
+                                    placeholder="Tên danh mục..."
+                                />
+                                <input
+                                    *ngIf="currentRoute === 'create-category'"
+                                    type="text"
+                                    formControlName="name"
+                                    required
+                                    value=""
+                                    class="form-control"
+                                    [ngClass]="
+                                        categoryForm.controls['name'].touched &&  categoryForm.controls['name'].errors?.['required']
+                                            ? 'error-mess form-control'
+                                            : 'form-control'
+                                    "
+                                    placeholder="Tên danh mục..."
+                                />
+                                <p class="category_mess" *ngIf="categoryForm.controls['name'].touched">
+                                    {{ categoryForm.controls['name'].errors?.['required'] ? 'Vui lòng không để trống' : '' }}
+                                </p>
+                                <p class="category_mess" *ngIf="!categoryForm.controls['name'].touched"></p>
+                            </div>
+                            <button
+                                *ngIf="currentRoute === 'create-category'"
+                                type="submit"
+                                name="sbm"
+                                class="btn btn-primary"
+                            >
+                                Thêm mới
+                            </button>
+                            <button
+                                *ngIf="currentRoute === 'edit-category'"
+                                type="submit"
+                                name="sbm"
+                                class="btn btn-primary"
+                            >
+                                Cập nhật
+                            </button>
+                            <button type="reset" class="btn btn-default">Làm mới</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-->
+    </div>
+    <!--/.main-->
+</div>

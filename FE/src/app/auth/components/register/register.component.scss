@@ -1,0 +1,96 @@
+.form_registrer {
+    max-width: 400px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 10px 6px -6px #999999;
+}
+.form_registrer .register_group {
+    margin-bottom: 8px;
+    width: 100%;
+    clear: both;
+}
+.form_registrer .register_group .register_input {
+    border: 1px solid rgba(204, 204, 204);
+    padding: 8px 12px;
+    border-radius: 12px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form_registrer .register_group .register_input input {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    width: 100%;
+}
+
+.form_registrer .register_group .register_mess {
+    margin-top: 4px;
+    min-height: 16px;
+    color: red;
+    font-size: 13px;
+    float: left;
+    clear: both;
+    padding-left: 8px;
+}
+.form_registrer .register_group .cursor {
+    cursor: pointer;
+}
+
+.register_by_social {
+    display: flex;
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.register_by_social_icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.or {
+    text-align: center;
+    font-weight: 900;
+    font-size: 20px;
+    color: #bbb;
+    padding: 12px 0;
+}
+.register_by_social_icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.form_registrer .redirect {
+}
+.form_registrer .redirect a {
+    text-decoration: none;
+    color: rgb(0, 94, 255);
+}
+.form_registrer .register_submit {
+    // margin-top: 20px;
+    outline: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    width: 100px;
+    border-radius: 16px;
+    border: 0.1px solid #ccc;
+    font-size: 16px;
+}
+.form_registrer .register_submit:hover {
+    transform: scale(0.9);
+}

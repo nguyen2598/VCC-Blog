@@ -1,0 +1,34 @@
+<form [formGroup]="recoverForm" (ngSubmit)="onSubmit()" class="recover_form" *ngIf="data">
+    <h2 class="recover_h2">Chúng tôi sẽ gửi mã xác nhận đến code của bạn</h2>
+    <div class="recover_content">
+        <div class="recover_left">
+            <div class="recover_td">Chúng tôi có thể gửi mã xác thực đến:</div>
+            <span class="recover_mail">{{ convertEmail(data.email) }}</span>
+            <div class="recover_group">
+                <div class="recover_input">
+                    <input id="code" type="text" placeholder="Code" formControlName="code" />
+                    <!-- <span>
+                        <IoIosMail />
+                    </span> -->
+                </div>
+                <p class="recover_mess" *ngIf="recoverForm.controls['code'].touched">
+                    {{ recoverForm.controls['code'].errors?.['required'] ? 'Vui lòng không để trống' :    '' }}
+                </p>
+                <p class="recover_mess" *ngIf="!recoverForm.controls['code'].touched"></p>
+            </div>
+        </div>
+        <div class="recover_right">
+            <div class="recover_image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/vi/c/c1/Nh%C3%A2n_v%E1%BA%ADt_v%E1%BA%BD_theo_phong_c%C3%A1ch_anime_-_manga_%C4%91%C6%B0%E1%BB%A3c_t%E1%BA%A1o_t%E1%BB%B1_%C4%91%E1%BB%99ng_b%E1%BB%9Fi_AI_%282%29.jpeg"
+                    alt="123"
+                />
+            </div>
+            <div class="recover_user_name">{{ data.username }}</div>
+        </div>
+    </div>
+    <div class="recover_footer">
+        <a href="./login.html">Đăng nhập bằng mật khẩu</a>
+        <button class="recover_submit">Tiếp tục</button>
+    </div>
+</form>

@@ -1,0 +1,53 @@
+<form [formGroup]="resetForm" (ngSubmit)="onSubmit()" class="reset_password_form">
+    <h2 class="reset_password_h2">Mật khẩu mới</h2>
+    <div class="reset_password_content">
+        <div class="reset_password_left">
+            <!-- <div class="reset_password_td">Chúng tôi có thể gửi mã đăng nhập đến:</div> -->
+            <!-- <span class="reset_password_mail">di***@gmai.com</span> -->
+            <div class="reset_password_group">
+                <div class="reset_password_input">
+                    <input id="password" type="password" placeholder="Mật khẩu mới" formControlName="password" />
+                    <!-- <span>
+                        <IoIosMail />
+                    </span> -->
+                </div>
+                <p class="reset_password_mess" *ngIf="resetForm.controls['password'].touched">
+                    {{ resetForm.controls['password'].errors?.['required'] ? 'Vui lòng không để trống' : 
+                       resetForm.controls['password'].errors?.['minlength'] ? 'Mật khẩu quá ngắn' : '' }}
+                </p>
+                <p class="reset_password_mess" *ngIf="!resetForm.controls['password'].touched"></p>
+            </div>
+            <div class="reset_password_group">
+                <div class="reset_password_input">
+                    <input
+                        id="confirmPassword"
+                        type="password"
+                        placeholder="Xác nhận mật khẩu"
+                        formControlName="confirmPassword"
+                    />
+                    <!-- <span>
+                        <IoIosMail />
+                    </span> -->
+                </div>
+                <p class="reset_password_mess" *ngIf="resetForm.controls['confirmPassword'].touched">
+                    {{ resetForm.controls['confirmPassword'].errors?.['required'] ? 'Vui lòng không để trống' : 
+                       resetForm.hasError('mismatch') ? 'Mật khẩu xác nhận không khớp' : '' }}
+                </p>
+                <p class="reset_password_mess" *ngIf="!resetForm.controls['confirmPassword'].touched"></p>
+            </div>
+        </div>
+        <!-- <div class="reset_password_right">
+            <div class="reset_password_image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/vi/c/c1/Nh%C3%A2n_v%E1%BA%ADt_v%E1%BA%BD_theo_phong_c%C3%A1ch_anime_-_manga_%C4%91%C6%B0%E1%BB%A3c_t%E1%BA%A1o_t%E1%BB%B1_%C4%91%E1%BB%99ng_b%E1%BB%9Fi_AI_%282%29.jpeg"
+                    alt="123"
+                />
+            </div>
+            <div class="reset_password_user_name">nguyen dinh</div>
+        </div> -->
+    </div>
+    <div class="reset_password_footer">
+        <a href="./reset_password.html">Đăng nhập bằng mật khẩu</a>
+        <button class="reset_password_submit">Cập nhật</button>
+    </div>
+</form>

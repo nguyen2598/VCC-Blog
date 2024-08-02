@@ -1,0 +1,275 @@
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a class="glyph stroked home"><i class="bx bx-home c-sky"></i> </a>
+            </li>
+            <li class="active">Quản lý người dùng</li>
+        </ol>
+    </div>
+    <!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Quản lý người dùng</h1>
+        </div>
+    </div>
+    <!--/.row-->
+    <!-- <div id="toolbar" class="btn-group bars fixed-table-toolbar">
+        <a routerLink="create-user" class="btn btn-success">
+            <i class="glyphicon glyphicon-plus"></i> Thêm người dùng</a
+        >
+    </div> -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row mb-20">
+                <div class="col-xs-12 text-right">
+                    <!-- <form
+                        class="form-inline"
+                        role="search"
+                        style="display: inline-block; margin-right: 10px"
+                        (ngSubmit)="onSubmit()"
+                    > -->
+                    <div style="display: inline-block; margin-right: 10px">
+                        <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search"
+                            (input)="onSearchChange($event)"
+                            [(ngModel)]="searchKey"
+                        />
+                    </div>
+                    <!-- </form> -->
+                    <div class="dropdown" style="display: inline-block; margin-right: 10px">
+                        <button
+                            id="dLabel"
+                            type="button"
+                            class="btn btn-default dropdown-toggle d-flex align-items-center"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            Filters
+                            <i class="bx bx-filter fz-16"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dLabel">
+                            <!-- Dropdown menu items here -->
+                            <li [class.active]="status === 'enable'" (click)="onStatusChange('enable')">Chưa xóa</li>
+                            <li [class.active]="status === 'disable'" (click)="onStatusChange('disable')">
+                                Đang bị xóa
+                            </li>
+                            <li [class.active]="status === 'all' || status === ''" (click)="onStatusChange('all')">
+                                Tất cả
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="toolbar" class="btn-group" style="display: inline-block">
+                        <a routerLink="create-user" class="btn btn-success">
+                            <i class="glyphicon glyphicon-plus"></i> Thêm người dùng
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table
+                        data-toolbar="#toolbar"
+                        data-toggle="table"
+                        class="w-100 table table-hover fixed-table-container"
+                    >
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>tên tài khoản</th>
+                                <th>gmail</th>
+                                <th>Chức vụ</th>
+                                <th>trạng thái</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let user of dataUsers">
+                                <td class="vertical-align-center">{{ user.id }}</td>
+                                <td class="vertical-align-center">{{ user.username }}</td>
+                                <td class="vertical-align-center">{{ user.email }}</td>
+                                <td
+                                    class="vertical-align-center text-align-center"
+                                    style="font-size: 16px; font-weight: 600"
+                                >
+                                    {{ user.role.role_name }}
+                                </td>
+                                <td
+                                    class="vertical-align-center column-status text-align-center"
+                                    [ngClass]="user.destroyTime ? 'status-disable' : 'status-enable '"
+                                >
+                                    {{ user.destroyTime ? 'disable' : 'enable ' }}
+                                </td>
+                                <td class="form-group text-center">
+                                    <div class="dropdown">
+                                        <button
+                                            class="btn btn-default dropdown-toggle"
+                                            type="button"
+                                            id="dropdownMenu1"
+                                            data-toggle="dropdown"
+                                        >
+                                            <i class="glyphicon glyphicon-option-vertical"></i>
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                            <li>
+                                                <a
+                                                    routerLink="edit-user"
+                                                    class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-30a5ff"
+                                                >
+                                                    <i class="bx bx-history"></i>
+                                                    Update
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a
+                                                    class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-30a5ff"
+                                                >
+                                                    <i class="bx bxs-detail"></i>
+                                                    Details
+                                                </a>
+                                            </li>
+                                            <li (click)="setIdUser(user.id, true)" *ngIf="!user.destroyTime">
+                                                <a
+                                                    data-toggle="modal"
+                                                    data-target="#exampleModalCenter"
+                                                    class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-red"
+                                                >
+                                                    <i class="bx bx-trash"></i>
+                                                    Delete
+                                                </a>
+                                            </li>
+                                            <li (click)="setIdUser(user.id, false)" *ngIf="user.destroyTime">
+                                                <a
+                                                    data-toggle="modal"
+                                                    data-target="#exampleModalCenter"
+                                                    class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-green"
+                                                >
+                                                    <i class="bx bx-history"></i>
+                                                    Restore
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="" *ngIf="!dataUsers || dataUsers.length === 0">
+                                <td colspan="5" class="text-center">Không có người dùng nào</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel-footer">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <!-- <li class="page-item" [class.disabled]="currentPage === 1">
+                                <a class="page-link" (click)="onPageChange(currentPage - 1)">&laquo;</a>
+                            </li> -->
+                            <li class="page-item" *ngIf="currentPage > 2">
+                                <a class="page-link" (click)="onPageChange(currentPage - 1)">&laquo;</a>
+                            </li>
+                            <li class="page-item" *ngIf="currentPage > 2">
+                                <a class="page-link" (click)="onPageChange(currentPage - 1)">...</a>
+                            </li>
+                            <li class="page-item" *ngIf="currentPage >= 2">
+                                <a class="page-link" (click)="onPageChange(currentPage - 1)">{{ currentPage - 1 }}</a>
+                            </li>
+                            <li class="page-item active">
+                                <a class="page-link">{{ currentPage }}</a>
+                            </li>
+                            <!-- <li *ngFor="let page of pages" class="page-item" [class.active]="page === currentPage">
+                                <a class="page-link" (click)="onPageChange(page)">{{ page }}</a>
+                            </li> -->
+                            <li class="page-item" *ngIf="currentPage <= totalPages - 1">
+                                <a class="page-link" (click)="onPageChange(currentPage + 1)">{{ currentPage + 1 }}</a>
+                            </li>
+                            <li class="page-item" *ngIf="currentPage < totalPages - 1">
+                                <a class="page-link" (click)="onPageChange(currentPage + 1)">...</a>
+                            </li>
+                            <li class="page-item" *ngIf="currentPage < totalPages - 1">
+                                <a class="page-link" (click)="onPageChange(currentPage + 1)">&raquo;</a>
+                            </li>
+                            <!-- <li class="page-item" [class.disabled]="currentPage === totalPages">
+                                <a class="page-link" (click)="onPageChange(currentPage + 1)">&raquo;</a>
+                            </li> -->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.row-->
+</div>
+
+<!-- Button trigger modal
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<!-- <div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">...</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<!-- Modal -->
+<div
+    class="modal fade"
+    id="exampleModalCenter"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true"
+>
+    <div class="modal-dialog modal-dialog-centered modal-confirm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="icon-box">
+                    <i class="bx bx-x"></i>
+                </div>
+                <h4 class="modal-title">Are you sure?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    {{
+                        isDelete
+                            ? 'Do you really want to delete these records? This process cannot be undone.'
+                            : 'Do you really want to Restore these records? This process cannot be undone.'
+                    }}
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" (click)="deleteOrRestoreUser()">
+                    {{ isDelete ? 'Delete' : 'Restore' }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

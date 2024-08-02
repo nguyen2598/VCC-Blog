@@ -1,0 +1,39 @@
+<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar pt-20px">
+    <!-- <form role="search">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search" />
+        </div>
+    </form> -->
+    <ul class="nav menu">
+        <!-- <li [routerLinkActive]="['active']"  [routerLinkActiveOptions]="{ exact: false }">
+            <a class="d-flex align-items-start" routerLink="/admin/dashboard">
+                <i class="glyph stroked bx bx-dialpad-alt"></i>Dashboard
+            </a>
+        </li> -->
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: false }">
+            <a class="d-flex align-items-start" routerLink="/admin/user">
+                <i class="glyph stroked bx bx-user"></i>Quản lý thành viên
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: false }">
+            <a class="d-flex align-items-start" [routerLink]="['/admin/category']">
+                <i class="glyph stroked bx bxs-folder-open"></i>Quản lý danh mục
+            </a>
+        </li>
+        <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: false }">
+            <a class="d-flex align-items-start" routerLink="/admin/language">
+                <i class="glyph stroked bx bx-world"></i>Quản lý ngôn ngữ
+            </a>
+        </li>
+        <li>
+            <a class="d-flex align-items-start" routerLink="/admin/comment">
+                <i class="glyph stroked bx bx-message-rounded-dots"></i>Quản lý bình luận
+            </a>
+        </li>
+        <li>
+            <a class="d-flex align-items-start" routerLink="/admin/setting">
+                <i class="glyph stroked bx bx-cog"></i>Cấu hình
+            </a>
+        </li>
+    </ul>
+</div>
