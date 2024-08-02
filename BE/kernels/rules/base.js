@@ -48,7 +48,6 @@ class WithLocale
                     [field]:value
                 }
             })
-
             if (recordExist) {
                 throw new Error(stringUtils.capitalize(this.field) + " must be unique")
             }

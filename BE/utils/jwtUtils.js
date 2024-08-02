@@ -30,4 +30,11 @@ module.exports = {
 
     return refresh_token;
   },
+  verifyToken: (token) => {
+   jwt.verify(token, config.jwt.secret, (err, data) => {
+      if (err) return { accessToken: null };
+      const accessToken = sign(data.userId, data.userRole);
+      return { accessToken };
+    });
+  },
 };

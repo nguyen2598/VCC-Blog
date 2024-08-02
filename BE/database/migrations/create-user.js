@@ -28,6 +28,9 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
+      ext: {
+        type: Sequelize.TEXT('long')
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
