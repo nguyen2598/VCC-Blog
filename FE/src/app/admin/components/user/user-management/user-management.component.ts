@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 export class UserManagementComponent {
     data: any;
     userForm: FormGroup;
-    role: string = '2';
+    role: string = '';
     // constructor(private router: Router) {
     //     const navigation = this.router.getCurrentNavigation();
     //     if (navigation?.extras?.state) {
@@ -42,11 +42,12 @@ export class UserManagementComponent {
             if (userId) {
                 this.userService.getDetailUser(userId).subscribe(
                     (res) => {
-                        this.data = res.data.name; // Lưu dữ liệu chi tiết danh mục vào this.data
+                        this.data = res.data; // Lưu dữ liệu chi tiết danh mục vào this.data
                         console.log('User detail:', this.data);
+                        this.role = res.data.role_id;
                         // Điền dữ liệu vào form để chỉnh sửa
                         this.userForm.patchValue({
-                            name: this.data, // Ví dụ: nếu dữ liệu từ server có trường name
+                            username: this.data, // Ví dụ: nếu dữ liệu từ server có trường name
                             // Các trường khác tương tự
                         });
                     },

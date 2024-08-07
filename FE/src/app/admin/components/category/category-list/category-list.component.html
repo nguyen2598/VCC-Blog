@@ -82,14 +82,14 @@
                             >
                                 <thead>
                                     <tr>
-                                        <th data-field="id" data-sortable="true">ID</th>
+                                        <th class="text-align-center" data-field="id" data-sortable="true">ID</th>
                                         <th>Tên danh mục</th>
                                         <th>Hành động</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let item of data">
-                                        <td style="">{{ item.id }}</td>
+                                    <tr *ngFor="let item of data; let stt = index">
+                                        <td class="text-align-center">{{ stt + 1 }}</td>
                                         <td style="">{{ item.name }}</td>
                                         <td class="form-group">
                                             <div class="dropdown">
@@ -141,17 +141,6 @@
                             </table>
                         </div>
                     </div>
-                    <div class="panel-footer">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                            </ul>
-                        </nav>
-                    </div>
                 </div>
             </div>
         </div>
@@ -184,6 +173,7 @@
             </div>
             <div class="modal-body">
                 <p>Do you really want to delete these records? This process cannot be undone.{{ idToDelete }}</p>
+                
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
