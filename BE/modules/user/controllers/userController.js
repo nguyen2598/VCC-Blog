@@ -21,6 +21,20 @@ const userController = {
             return responseUtils.error(res, error.message);
         }
     },
+    getUser: async (req, res) => {
+        try {
+            const { userId } = req.params;
+            const result = await userService.findById(userId);
+            console.log({ result });
+            if (result) {
+                return responseUtils.ok(res, result);
+            } else {
+                return responseUtils.notFound(res, 'Get all users failed');
+            }
+        } catch (error) {
+            return responseUtils.error(res, error.message);
+        }
+    },
     deleteUser: async (req, res) => {
         try {
             const { userId } = req.params;

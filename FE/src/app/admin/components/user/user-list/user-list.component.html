@@ -1,4 +1,4 @@
-<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main delete-p-r-15px">
     <div class="row">
         <ol class="breadcrumb">
             <li>
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="row mb-20">
-                <div class="col-xs-12 text-right">
+                <div class="col-xs-12 text-left">
                     <!-- <form
                         class="form-inline"
                         role="search"
@@ -63,11 +63,11 @@
                             </li>
                         </ul>
                     </div>
-                    <div id="toolbar" class="btn-group" style="display: inline-block">
+                    <!-- <div id="toolbar" class="btn-group" style="display: inline-block">
                         <a routerLink="create-user" class="btn btn-success">
                             <i class="glyphicon glyphicon-plus"></i> Thêm người dùng
                         </a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -80,24 +80,24 @@
                     >
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>tên tài khoản</th>
-                                <th>gmail</th>
-                                <th>Chức vụ</th>
-                                <th>trạng thái</th>
-                                <th>actions</th>
+                                <th class="text-align-center">STT</th>
+                                <th>Tên tài khoản</th>
+                                <th>Gmail</th>
+                                <th class="text-align-center">Chức vụ</th>
+                                <th>Trạng thái</th>
+                                <th class="text-align-center">Hành động</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let user of dataUsers">
-                                <td class="vertical-align-center">{{ user.id }}</td>
+                            <tr *ngFor="let user of dataUsers; let i = index">
+                                <td class="vertical-align-center text-align-center">{{ i + 1 }}</td>
                                 <td class="vertical-align-center">{{ user.username }}</td>
                                 <td class="vertical-align-center">{{ user.email }}</td>
                                 <td
                                     class="vertical-align-center text-align-center"
                                     style="font-size: 16px; font-weight: 600"
                                 >
-                                    {{ user.role.role_name }}
+                                    {{ user?.role?.role_name }}
                                 </td>
                                 <td
                                     class="vertical-align-center column-status text-align-center"
@@ -120,10 +120,11 @@
                                             <li>
                                                 <a
                                                     routerLink="edit-user"
+                                                    [queryParams]="{ id: user.id }"
                                                     class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-30a5ff"
                                                 >
                                                     <i class="bx bx-history"></i>
-                                                    Update
+                                                    Cập nhập
                                                 </a>
                                             </li>
                                             <li>
@@ -131,7 +132,7 @@
                                                     class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-30a5ff"
                                                 >
                                                     <i class="bx bxs-detail"></i>
-                                                    Details
+                                                    Chi tiết
                                                 </a>
                                             </li>
                                             <li (click)="setIdUser(user.id, true)" *ngIf="!user.destroyTime">
@@ -141,7 +142,7 @@
                                                     class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-red"
                                                 >
                                                     <i class="bx bx-trash"></i>
-                                                    Delete
+                                                    Xóa
                                                 </a>
                                             </li>
                                             <li (click)="setIdUser(user.id, false)" *ngIf="user.destroyTime">
@@ -151,7 +152,7 @@
                                                     class="d-flex justify-content-center align-items-center gap-8 fz-16 fw-600 color-green"
                                                 >
                                                     <i class="bx bx-history"></i>
-                                                    Restore
+                                                    Khôi phục
                                                 </a>
                                             </li>
                                         </ul>
@@ -206,38 +207,6 @@
     <!--/.row-->
 </div>
 
-<!-- Button trigger modal
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<!-- <div
-    class="modal fade"
-    id="exampleModalCenter"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="exampleModalCenterTitle"
-    aria-hidden="true"
->
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">...</div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<!-- Modal -->
 <div
     class="modal fade"
     id="exampleModalCenter"

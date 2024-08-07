@@ -39,6 +39,7 @@ router.group('/auth', (router) => {
 });
 router.group('/users', (router) => {
     router.get('/', userController.getUsers);
+    router.get('/:userId', userController.getUser);
     router.delete('/delete/:userId', userController.deleteUser);
     router.delete('/restore/:userId', userController.restoreUser);
 });

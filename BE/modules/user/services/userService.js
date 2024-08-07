@@ -46,6 +46,20 @@ const userService = {
         });
         return users;
     },
+    findById: async (uid) => {
+        const user = await db.User.findOne({
+            where: { id: uid },
+            attributes: [
+                'id',
+                'username',
+                'email',
+                'role_id',
+                ['createdAt', 'created_at'], // cachs đổi tên
+                ['updatedAt', 'updated_at'],
+            ],
+        });
+        return user;
+    },
     delete: async (uid) => {
         const deletedCount = await db.User.destroy({
             where: { id: uid },
